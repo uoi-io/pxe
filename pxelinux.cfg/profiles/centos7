@@ -1,0 +1,7 @@
+PROMPT 0
+DEFAULT centos7
+SERIAL 0 115200
+
+LABEL centos7
+    KERNEL centos/x86_64/vmlinuz
+    APPEND ks=http://IPADDR:PORT/pxe/centos/ks-7.cfg initrd=centos/x86_64/initrd.img ncserv=NC-IPADDR ncport=NC-PORT ip=dhcp console=ttyS0 console=tty0 console=console

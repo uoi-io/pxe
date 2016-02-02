@@ -1,0 +1,4 @@
+d-i partman-auto/disk string /dev/vda
+d-i grub-installer/bootdev string /dev/vda
+# Password: 1L0v3U0I (CHANGE IT)
+d-i passwd/root-password-crypted password $6$x8SjvV7J$DhImzZMDsrAWeG1rr7s3zLwrMcW3FJ120kkf6hhNdzkH3G11RVQWsySictb5rakxCSw1eW3XPNghfUXt84LdD/

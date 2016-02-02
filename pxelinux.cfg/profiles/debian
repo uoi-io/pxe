@@ -1,0 +1,7 @@
+PROMPT 0
+DEFAULT debian
+SERIAL 0 115200
+
+LABEL debian
+    KERNEL debian/jessie/amd64/linux
+    APPEND initrd=debian/jessie/amd64/initrd.gz auto=true interface=auto netcfg/dhcp_timeout=30 netcfg/choose_interface=auto priority=critical url=http://IPADDR:PORT/pxe/debian/preseed.conf DEBCONF_DEBUG=5 IPAPPEND 2 ncserv=NC-IPADDR ncport=NC-PORT biosdevname=1 console=ttyS0 console=tty0 console=console
