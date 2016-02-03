@@ -1,6 +1,6 @@
 # Unified OpenStack Installer PXE
 
-This repository contains files that are used during a server installation. This one contains:
+This repository contains files that are used during a server installation. Contents:
   - PXE profiles
   - Kickstart files
   - Preseed files
