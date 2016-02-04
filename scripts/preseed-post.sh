@@ -20,6 +20,7 @@ for iface in $(ls -1 /sys/class/net | grep -v ^lo$); do
 
     wget -U "UOI preseed-post" -O /target/tmp/preseed-post.sh ${ksUrl}/fragments/seed/${mac}.post.seed
     if [ $? -eq 0 ]; then
+        echo $mac > /target/tmp/mac
         echo "SET-LOCAL-BOOT|${mac}" > /target/tmp/set-local-boot
         exit 0
     fi
