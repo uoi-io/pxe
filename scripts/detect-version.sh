@@ -9,7 +9,7 @@ for iface in $(ls -1 /sys/class/net | grep -v ^lo$); do
     mac=$(sed 's/:/-/g' /sys/class/net/${iface}/address)
 
     # Get the post-preseed file to get the "version" variable
-    wget -O /tmp/preseed-post.sh http://IPADDR:PORT/pxe/fragments/${mac}.post.seed
+    wget -U "UOI Detect-Version" -O /tmp/preseed-post.sh http://IPADDR:PORT/pxe/fragments/${mac}.post.seed
     if [ $? -eq 0 ]; then
         distribution=$(grep "version=" /tmp/preseed-post.sh | awk -F"=" '{ print $2 }' | awk -F"-" '{ print $1 }')
         version=$(grep "version=" /tmp/preseed-post.sh | awk -F"=" '{ print $2 }' | awk -F"-" '{ print $2 }')
