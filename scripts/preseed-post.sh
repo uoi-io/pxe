@@ -13,7 +13,7 @@ for iface in $(ls -1 /sys/class/net | grep -v ^lo$); do
         esac
     done
     # Get ks URL arg value
-    ksUrl=$(echo ${url%/*})
+    ksUrl=$(echo ${url%/*/*})
 
     # Transform the MAC address
     mac=$(sed 's/:/-/g' /sys/class/net/${iface}/address)
